@@ -16,11 +16,11 @@ parms = {
 }
 
 logger = logging.getLogger(__name__)
-formatter = logging.Formatter(u'%(asctime)s [%(levelname)8s] %(message)s')
+formatter = logging.Formatter(u'%(asctime)s|[%(levelname)8s]|%(message)s')
 logger.setLevel(logging.DEBUG)
 fileHandler = TimedRotatingFileHandler(filename='./scheduler.log', when='h', interval=1, encoding='utf-8')
 fileHandler.setFormatter(formatter)
-fileHandler.suffix = '%Y%m%d'
+fileHandler.prefix = '%Y%m%d'
 fileHandler.setLevel(logging.DEBUG)
 logger.addHandler(fileHandler)
 
