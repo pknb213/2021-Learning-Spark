@@ -1,0 +1,6 @@
+Admin: adminUserAdmin
+PWD: 12**
+
+DB: airDB
+DB User: cyj
+PWD: Same
