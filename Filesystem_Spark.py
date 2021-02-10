@@ -4,6 +4,7 @@ from pyspark import SparkContext, SparkConf
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from Spark.spark.python.pyspark.context import xrange
+from datetime import datetime
 
 print(os.getcwd())
 # for root, dir, files in os.walk(os.getcwd()):
@@ -35,12 +36,23 @@ sc = spark.sparkContext
 
 # conf = SparkConf().setAppName("test").setMaster("local")
 # sc = SparkContext(conf=conf)
-data = [1, 2, 3, 4, 5]
-distData = sc.parallelize(data)
-print(distData)
+data = [{'a': x, 'b': x*x} for x in xrange(0, 100000)]
+rdd = sc.parallelize(data)
+st = datetime.now()
+print(rdd)
+print(rdd.collect())
+print(rdd.count())
+print(datetime.now() - st)
 
-# data = [{'a': str(x), 'b': str(x*x)} for x in xrange(0, 1000)]
-# print(data)
+
+def div(v):
+    v['b'] = v['b'] // 10
+    return v
 
 
+st = datetime.now()
+ddd = rdd.map(div)
+print(ddd.collect())
+print(ddd.count())
+print(datetime.now() - st)
 
