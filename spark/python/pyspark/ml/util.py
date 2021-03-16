@@ -185,7 +185,7 @@ class JavaMLWriter(MLWriter):
 
     def session(self, sparkSession):
         """Sets the Spark Session to use for saving."""
-        self._jwrite.session(sparkSession._jsparkSession)
+        self._jwrite.extract(sparkSession._jsparkSession)
         return self
 
 
@@ -285,7 +285,7 @@ class JavaMLReader(MLReader):
 
     def session(self, sparkSession):
         """Sets the Spark Session to use for loading."""
-        self._jread.session(sparkSession._jsparkSession)
+        self._jread.extract(sparkSession._jsparkSession)
         return self
 
     @classmethod

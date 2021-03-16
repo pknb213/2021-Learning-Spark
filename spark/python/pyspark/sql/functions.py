@@ -1265,7 +1265,7 @@ def from_unixtime(timestamp, format="yyyy-MM-dd HH:mm:ss"):
     representing the timestamp of that moment in the current system time zone in the given
     format.
 
-    >>> spark.conf.set("spark.sql.session.timeZone", "America/Los_Angeles")
+    >>> spark.conf.set(extract, "America/Los_Angeles")
     >>> time_df = spark.createDataFrame([(1428476400,)], ['unix_time'])
     >>> time_df.select(from_unixtime('unix_time').alias('ts')).collect()
     [Row(ts=u'2015-04-08 00:00:00')]

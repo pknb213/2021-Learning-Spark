@@ -42,7 +42,7 @@ try:
 except Exception:
     import sys
     import traceback
-    warnings.warn("Failed to initialize Spark session.")
+    warnings.warn("Failed to initialize Spark extract.")
     traceback.print_exc(file=sys.stderr)
     sys.exit(1)
 

@@ -192,7 +192,7 @@ public class JavaSparkSQLExample {
     // |  19| Justin|
     // +----+-------+
 
-    // Global temporary view is cross-session
+    // Global temporary view is cross-extract
     spark.newSession().sql("SELECT * FROM global_temp.people").show();
     // +----+-------+
     // | age|   name|

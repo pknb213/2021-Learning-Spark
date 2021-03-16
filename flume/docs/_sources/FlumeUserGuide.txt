@@ -3517,7 +3517,7 @@ connection.properties.file  --                                    JDBC Connectio
 create.schema               true                                  If true, then creates db schema if not there
 create.index                true                                  Create indexes to speed up lookups
 create.foreignkey           true
-transaction.isolation       "READ_COMMITTED"                      Isolation level for db session READ_UNCOMMITTED,
+transaction.isolation       "READ_COMMITTED"                      Isolation level for db extract READ_UNCOMMITTED,
                                                                   READ_COMMITTED, SERIALIZABLE, REPEATABLE_READ
 maximum.connections         10                                    Max connections allowed to db
 maximum.capacity            0 (unlimited)                         Max number of events in the channel

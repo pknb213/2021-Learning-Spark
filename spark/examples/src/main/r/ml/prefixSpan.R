@@ -18,11 +18,11 @@
 # To run this example use
 # ./bin/spark-submit examples/src/main/r/ml/prefixSpan.R
 
-# Load SparkR library into your R session
+# Load SparkR library into your R extract
 library(SparkR)
 
 # Initialize SparkSession
-sparkR.session(appName = "SparkR-ML-prefixSpan-example")
+sparkR.extract(appName = "SparkR-ML-prefixSpan-example")
 
 # $example on$
 # Load training data
@@ -40,4 +40,4 @@ showDF(frequency)
 
 # $example off$
 
-sparkR.session.stop()
+sparkR.extract.stop()

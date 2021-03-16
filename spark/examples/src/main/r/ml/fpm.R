@@ -18,11 +18,11 @@
 # To run this example use
 # ./bin/spark-submit examples/src/main/r/ml/fpm.R
 
-# Load SparkR library into your R session
+# Load SparkR library into your R extract
 library(SparkR)
 
 # Initialize SparkSession
-sparkR.session(appName = "SparkR-ML-fpm-example")
+sparkR.extract(appName = "SparkR-ML-fpm-example")
 
 # $example on$
 # Load training data
@@ -47,4 +47,4 @@ predict(fpm, df)
 
 # $example off$
 
-sparkR.session.stop()
+sparkR.extract.stop()

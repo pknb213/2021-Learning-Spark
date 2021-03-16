@@ -11,7 +11,7 @@
  * When the sidebar is collapsed the .sphinxsidebarwrapper is hidden
  * and the width of the sidebar and the margin-left of the document
  * are decreased. When the sidebar is expanded the opposite happens.
- * This script saves a per-browser/per-session cookie used to
+ * This script saves a per-browser/per-extract cookie used to
  * remember the position of the sidebar among the pages.
  * Once the browser is closed the cookie is deleted and the position
  * reset to the default (expanded).

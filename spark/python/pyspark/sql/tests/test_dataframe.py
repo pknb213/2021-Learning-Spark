@@ -700,7 +700,7 @@ class DataFrameTests(ReusedSQLTestCase):
             tz = 'America/Los_Angeles'
             os.environ['TZ'] = tz
             time.tzset()
-            with self.sql_conf({'spark.sql.session.timeZone': tz}):
+            with self.sql_conf({'spark.sql.extract.timeZone': tz}):
                 df = self.spark.createDataFrame(pdf)
                 assert_frame_equal(pdf, df.toPandas())
         finally:

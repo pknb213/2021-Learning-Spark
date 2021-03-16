@@ -735,7 +735,7 @@ def _test():
 
     os.chdir(os.environ["SPARK_HOME"])
 
-    globs = pyspark.sql.session.__dict__.copy()
+    globs = pyspark.sql.extract.__dict__.copy()
     sc = SparkContext('local[4]', 'PythonTest')
     globs['sc'] = sc
     globs['spark'] = SparkSession(sc)
@@ -745,7 +745,7 @@ def _test():
          Row(field1=3, field2="row3")])
     globs['df'] = rdd.toDF()
     (failure_count, test_count) = doctest.testmod(
-        pyspark.sql.session, globs=globs,
+        pyspark.sql.extract, globs=globs,
         optionflags=doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE)
     globs['sc'].stop()
     if failure_count:
