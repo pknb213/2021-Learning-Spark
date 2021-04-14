@@ -2,6 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.idea/
+
+# Data Set
+yelp*.json
+*.csv
 
 # C extensions
 *.so
